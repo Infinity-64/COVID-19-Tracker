@@ -6,6 +6,7 @@
     </head>
     <body>
       <h1>COVID-19 Tracker</h1>
+      <h2>Cases and Deaths</h2>
 
 <div id="piechart"></div>
 
@@ -28,7 +29,7 @@ function drawChart() {
   ['Deaths - Other', 275]
 ]);
 
-  var options = {'title':'Cases and Deaths', 'width':1000, 'height':1000};
+  var options = {'title':'', 'width':1000, 'height':1000};
 
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
