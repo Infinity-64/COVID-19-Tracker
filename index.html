@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+       <link href = "stylesheet.css" rel = "stylesheet" />
+      <title>COVID-19 Tracker</title>
+    </head>
+    <body>
+      <h1>COVID-19 Tracker</h1>
+
+<div id="piechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Cases/Deaths', 'Hours per Day'],
+  ['Cases - New York', 15168],
+  ['Cases - Wahington', 1793],
+  ['Cases - California', 1543],
+  ['Cases - New Jersey', 1336],
+  ['Cases - Louisiana', 837],
+  ['Cases - Other', 9663],
+  ['Deaths - New York', 114],
+  ['Deaths - Other', 275]
+]);
+
+  var options = {'title':'Cases and Deaths', 'width':1000, 'height':1000};
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+
+
+    </body>
+  </html>
+  
